@@ -1,0 +1,13 @@
+<h2>Профиль</h2>
+<pre id="profile"></pre>
+
+<script>
+fetch('http://api.local/local/api/profile.php', {
+  credentials: 'include'
+})
+.then(res => res.json())
+.then(data => {
+  document.getElementById('profile').innerText =
+    JSON.stringify(data, null, 2);
+});
+</script>
